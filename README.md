@@ -1,1 +1,1 @@
-#AI Tic Tac Toe player using golang
+# AI Tic Tac Toe player using golang
