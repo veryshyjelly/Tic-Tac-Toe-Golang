@@ -124,16 +124,18 @@ func Minimax(board map[string]string) string {
 	if Player(board) == X {
 		maxActionValue, maxAction := -1, ""
 		for action := range actions(board) {
-			if minValue(Result(board, action)) > maxActionValue {
+			if v := minValue(Result(board, action)); v > maxActionValue {
 				maxAction = action
+				maxActionValue = v
 			}
 		}
 		return maxAction
 	} else {
 		minActionValue, minAction := 1, ""
 		for action := range actions(board) {
-			if maxValue(Result(board, action)) < minActionValue {
+			if v := maxValue(Result(board, action)); v < minActionValue {
 				minAction = action
+				minActionValue = v
 			}
 		}
 		return minAction
